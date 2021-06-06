@@ -2,7 +2,10 @@
 
 Phonebook::Phonebook()
 {
+    this->counter = 0;
 }
+
+
 
 Phonebook::~Phonebook()
 {

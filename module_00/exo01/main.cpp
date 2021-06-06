@@ -4,12 +4,13 @@
 
 int main(void)
 {
-    std::string i;
+    std::string cmd;
+    Phonebook pb;
     std::cout << "you should accept the ADD command, the SEARCH command or the EXIT command: " << std::endl;
     while (1)
     {
-        std::cin >> i;
-        if (i == "EXIT")
+        std::cin >> cmd;
+        if (cmd == "EXIT")
             break;
     }
     

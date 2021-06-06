@@ -9,8 +9,7 @@ void       transform(char **t)
     {
         while (*s)
         {
-            if (*s >= 'a' && *s <='z')
-                *s -= 32;
+            *s = std::toupper(*s);
             (s)++;
         }
     }

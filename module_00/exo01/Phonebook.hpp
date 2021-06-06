@@ -11,10 +11,10 @@ private:
     int         counter;
     Contact contacts[8];
 public:
+    Phonebook();
     void    addContact();
     void    searchContact();
     void    getContactByIndex();
-    Phonebook();
     ~Phonebook();
 };
 
