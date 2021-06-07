@@ -20,7 +20,7 @@ private:
     std::string darkest_secret;
 
 public:
-    void displayContact();
+    void displayContact(int index);
     void getContact();
     Contact();
     Contact(std::string f_n, std::string l_n, std::string n_n,
