@@ -18,4 +18,4 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
-}
+} 

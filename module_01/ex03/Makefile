@@ -1,14 +1,11 @@
-NAME = ex03
+NAME = exo_03
 
-CC = clang++ -Wall -Wextra -Werror
+CC = clang++
 
 SRC = ./main.cpp \
 	./HumanA.cpp \
-	./HumanA.hpp \
-	./HumanB.cpp \
-	./HumanB.hpp \
 	./Weapon.cpp \
-	./Weapon.hpp \
+	./HumanB.cpp \
 
 all: $(NAME)
 
