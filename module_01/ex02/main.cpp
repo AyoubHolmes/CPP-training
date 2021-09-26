@@ -6,7 +6,9 @@ int main(void)
     std::string *stringPTR = &str;
     std::string &stringREF = str;
 
-    std::cout << str << std::endl;
+    std::cout << "Memeory Address by str=>  " << &str << std::endl;
+    std::cout << "Memeory Address by stringPTR =>  " << stringPTR << std::endl;
+    std::cout << "Memeory Address by stringRef =>  " << &stringREF << std::endl;
     std::cout << *stringPTR << std::endl;
     std::cout << stringREF << std::endl;
     return 0;
