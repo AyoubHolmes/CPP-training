@@ -8,19 +8,12 @@ private:
     int fixed_point_value;
     static const int fractional_bits = 8;
 public:
-    Fixed(/* args */);
+    Fixed();
     Fixed(Fixed &F);
-    void operator = (Fixed F);
+    void operator = (Fixed &F);
+    int getRawBits( void ) const;
+    void setRawBits( int const raw );
     ~Fixed();
 };
-
-Fixed::Fixed(/* args */)
-{
-}
-
-Fixed::~Fixed()
-{
-}
-
 
 #endif // !FIXED_H
