@@ -14,6 +14,7 @@ Fixed::Fixed(Fixed &F)
 
 void	Fixed::operator = (Fixed &F)
 {
+	std::cout << "Assignation operator called" << std::endl;
 	fixed_point_value = F.fixed_point_value;
 }
 
@@ -22,9 +23,10 @@ int		Fixed::getRawBits( void ) const{
 }
 
 void	Fixed::setRawBits( int const raw ){
-
+	fixed_point_value = raw;
 }
 
 Fixed::~Fixed()
 {
+	std::cout << "Destructor called" << std::endl;
 }
