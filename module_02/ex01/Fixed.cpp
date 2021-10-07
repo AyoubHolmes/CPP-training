@@ -18,13 +18,12 @@ Fixed::Fixed(const float val)
 	fixed_point_value = val * (1 << Fixed::fractional_bits);
 }
 
-Fixed::Fixed(Fixed &F)
-{
+Fixed::Fixed(Fixed const &F)  {
 	std::cout << "Copy constructor called" << std::endl;
 	fixed_point_value = F.fixed_point_value;
 }
 
-Fixed     &Fixed::operator = (Fixed &F)
+Fixed     &Fixed::operator = (Fixed const &F)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	fixed_point_value = F.fixed_point_value;
@@ -40,11 +39,16 @@ void	Fixed::setRawBits( int const raw ){
 }
 
 float	Fixed::toFloat( void ) const{
-	return ((float)fixed_point_value * (1 << Fixed::fractional_bits));
+	return ((float)fixed_point_value / (1 << Fixed::fractional_bits));
 }
 
 int		Fixed::toInt( void ) const{
-	return ((int)fixed_point_value * (1 << Fixed::fractional_bits));
+	return ((int)fixed_point_value / (1 << Fixed::fractional_bits));
+}
+
+std::ostream &operator<<(std::ostream& os, Fixed const & F) {
+	os << F.toFloat();
+	return (os);
 }
 
 Fixed::~Fixed()
