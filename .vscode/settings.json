@@ -65,6 +65,8 @@
         "clocale": "cpp",
         "deque": "cpp",
         "memory_resource": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "bit": "cpp",
+        "stack": "cpp"
     }
 }
