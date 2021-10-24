@@ -62,7 +62,7 @@ Fixed    Fixed::operator + (Fixed const &F2)
 	return (F3);
 }
 
-Fixed    Fixed::operator* (Fixed const &F2)
+Fixed    Fixed::operator * (Fixed const &F2)
 {
 	Fixed F3;
 	F3.fixed_point_value = (this->fixed_point_value * F2.getRawBits());
