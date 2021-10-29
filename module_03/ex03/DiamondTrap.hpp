@@ -9,6 +9,7 @@ private:
 public:
     DiamondTrap(std::string name);
     void whoAmI();
-    using ScavTrap::attack;
+    // using ScavTrap::attack;
+    void attack(std::string const & target);
     ~DiamondTrap();
 };

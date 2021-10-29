@@ -10,6 +10,11 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name), ScavTrap(name), Frag
     attack_damage = FragTrap::attack_damage;
 }
 
+void    DiamondTrap::attack(std::string const & target)
+{
+    ScavTrap::attack(target);
+}
+
 void    DiamondTrap::whoAmI()
 {
     std::cout << "This is my name: " << name << std::endl;
