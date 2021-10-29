@@ -1,4 +1,4 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -6,10 +6,10 @@ int main(int argc, char const *argv[])
 	c.attack("CT1");
 	c.takeDamage(20);
 	c.beRepaired(20);
-	ScavTrap s ("S1");
-	s.attack("CT1");
-	s.takeDamage(20);
-	s.beRepaired(20);
-	s.guardGate();
+	FragTrap f("S1");
+	f.attack("CT1");
+	f.takeDamage(20);
+	f.beRepaired(20);
+	f.highFivesGuys();
 	return 0;
 }

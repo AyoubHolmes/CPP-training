@@ -1,4 +1,4 @@
-NAME = Fixed
+NAME = ScavTrap
 
 CC = clang++ -Wall -Wextra -Werror
 

@@ -1,5 +1,4 @@
 #ifndef SCAVTRAOP_H
-#include <string>
 #include "ClapTrap.hpp"
 
 
@@ -9,7 +8,7 @@ private:
     /* data */
 public:
     ScavTrap(std::string);
-    void guardGate(); 
+    void guardGate();
     ~ScavTrap();
 
 };
