@@ -1,4 +1,4 @@
-NAME = DiamondTrap
+NAME = Polymorphism
 
 CC = clang++ -Wall -Wextra -Werror
 
