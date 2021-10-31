@@ -7,7 +7,7 @@
 class Cat : public Animal
 {
 public:
-    Cat(/* args */);
+    Cat();
     void        makeSound() const;
     ~Cat();
 };
