@@ -14,13 +14,12 @@ SRC_OBJ = ./main.o \
 	./FragTrap.o \
 	./DiamondTrap.o \
 
-HEADER = ./ClapTrap.hpp ./ScavTrap.hpp
+HEADER = ./ClapTrap.hpp ./ScavTrap.hpp ./FragTrap.hpp ./DiamondTrap.hpp 
 
 all: $(NAME)
 
 $(NAME): $(SRC_OBJ) $(HEADER)
 	$(CXX) $(CFLAGS) $(SRC_OBJ) -o $(NAME)
-
 
 clean:
 	rm -rf $(SRC_OBJ)

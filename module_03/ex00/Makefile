@@ -1,6 +1,7 @@
 NAME = ClapTrap
 
-CC = clang++ -Wall -Wextra -Werror
+CXX = clang++ 
+CPPFLAGS = -Wall -Wextra -Werror
 
 SRC = ./main.cpp \
 	./ClapTrap.cpp \
@@ -8,18 +9,20 @@ SRC = ./main.cpp \
 SRC_OBJ = ./main.o \
 	./ClapTrap.o \
 
-HEADER = ./ClapTrap.hpp
+HEADER = ./ClapTrap.hpp 
 
 all: $(NAME)
 
 $(NAME): $(SRC_OBJ) $(HEADER)
-	$(CC) $(SRC_OBJ) -o $(NAME)
+	$(CXX) $(SRC_OBJ) -o $(NAME)
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $<
+%.o:%.cpp $(HEADER)
+	$(CXX) $(CPPFLAGS) -c $<
 
 clean:
 	rm -rf $(NAME)
 
 fclean:
 	rm -rf $(NAME) $(SRC_OBJ)
+
+re: fclean all
