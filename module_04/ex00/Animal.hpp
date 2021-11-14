@@ -12,7 +12,7 @@ public:
     Animal();
     std::string getType() const;
     virtual void        makeSound() const;
-    ~Animal();
+    virtual ~Animal();
 };
 
 #endif // !ANIMAL_H

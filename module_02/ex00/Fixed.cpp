@@ -19,10 +19,12 @@ void	Fixed::operator = (Fixed &F)
 }
 
 int		Fixed::getRawBits( void ) const{
+	std::cout << "GetRawbits function called" << std::endl;
 	return (fixed_point_value);
 }
 
 void	Fixed::setRawBits( int const raw ){
+	std::cout << "SetRawbits function called" << std::endl;
 	fixed_point_value = raw;
 }
 

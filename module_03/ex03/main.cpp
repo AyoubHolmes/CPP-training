@@ -1,15 +1,24 @@
 #include "DiamondTrap.hpp"
 
-int main(int argc, char const *argv[])
+int    main()
 {
-	DiamondTrap d ("C1");
-	d.attack("CT1");
-	d.takeDamage(20);
-	d.beRepaired(20);
-	d.attack("CT1");
-	d.takeDamage(20);
-	d.beRepaired(20);
-	d.highFivesGuys();
-	d.whoAmI();
-	return 0;
+    DiamondTrap d_trap;
+    std::cout << std::endl;
+    DiamondTrap d_trap1("flana");
+    std::cout << std::endl;
+    DiamondTrap d_trap2(d_trap1);
+    std::cout << "++++++++++" << std::endl;
+    std::cout << std::endl;
+
+    d_trap = d_trap2;
+    std::cout << std::endl;
+
+    d_trap.attack("flan");
+    std::cout << std::endl;
+    d_trap.guardGate();
+    std::cout << "++++++++++" << std::endl;
+    std::cout << std::endl;
+    d_trap.whoAmI();
+    std::cout << std::endl;
+    std::cout << "++++++++++" << std::endl;
 }

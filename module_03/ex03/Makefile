@@ -1,6 +1,6 @@
 NAME = DiamondTrap
 
-CC = clang++ -Wall -Wextra -Werror
+CXX = clang++ -Wall -Wextra -Werror
 
 SRC = ./main.cpp \
 	./ClapTrap.cpp \
@@ -19,10 +19,11 @@ HEADER = ./ClapTrap.hpp ./ScavTrap.hpp
 all: $(NAME)
 
 $(NAME): $(SRC_OBJ) $(HEADER)
-	$(CC) $(SRC_OBJ) -o $(NAME)
+	$(CXX) $(CFLAGS) $(SRC_OBJ) -o $(NAME)
+
 
 clean:
-	rm -rf $(NAME)
+	rm -rf $(SRC_OBJ)
 
 fclean:
 	rm -rf $(NAME) $(SRC_OBJ)

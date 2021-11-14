@@ -2,31 +2,26 @@
 
 Fixed::Fixed()
 {
-	// std::cout << "Default constructor called" << std::endl;
 	fixed_point_value = 0;
 }
 
 Fixed::Fixed(const int val)
 {
-	// std::cout << "Default constructor called" << std::endl;
 	fixed_point_value = val << Fixed::fractional_bits;
 }
 
 Fixed::Fixed(const float val)
 {
-	// std::cout << "Default constructor called" << std::endl;
-	fixed_point_value = round(val * (1 << Fixed::fractional_bits));
+	fixed_point_value = roundf(val * (1 << Fixed::fractional_bits));
 }
 
 Fixed::Fixed(Fixed const &F)
 {
-	// std::cout << "Copy constructor called" << std::endl;
 	fixed_point_value = F.fixed_point_value;
 }
 
 Fixed     &Fixed::operator = (Fixed const &F)
 {
-	// std::cout << "Assignation operator called" << std::endl;
 	fixed_point_value = F.fixed_point_value;
 	return (*this);
 }
@@ -65,8 +60,7 @@ Fixed    Fixed::operator + (Fixed const &F2)
 Fixed    Fixed::operator * (Fixed const &F2)
 {
 	Fixed F3;
-	F3.fixed_point_value = (this->fixed_point_value * F2.getRawBits());
-	F3.fixed_point_value = F3.toInt();
+	F3.fixed_point_value = (this->fixed_point_value * (F2.getRawBits() / (1 << Fixed::fractional_bits)));
 	return (F3);
 }
 
@@ -80,7 +74,8 @@ Fixed    Fixed::operator - (Fixed const &F2)
 
 Fixed    Fixed::operator / (Fixed const &F2)
 {
-	Fixed F3 (this->fixed_point_value / F2.getRawBits());
+	Fixed F3;
+	F3.fixed_point_value = ((this->fixed_point_value * (1 << Fixed::fractional_bits)) / F2.getRawBits());
 	return (F3);
 }
 
@@ -166,5 +161,4 @@ const Fixed    &Fixed::max(const Fixed &F1, const Fixed &F2)
 
 Fixed::~Fixed()
 {
-	// std::cout << "Destructor called" << std::endl;
 }

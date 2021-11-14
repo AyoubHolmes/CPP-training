@@ -1,15 +1,42 @@
 #include "ScavTrap.hpp"
 
-int main(int argc, char const *argv[])
+int    main()
 {
-	ClapTrap c ("C1");
-	c.attack("CT1");
-	c.takeDamage(20);
-	c.beRepaired(20);
-	ScavTrap s ("S1");
-	s.attack("CT1");
-	s.takeDamage(20);
-	s.beRepaired(20);
-	s.guardGate();
-	return 0;
+    ScavTrap    trap("liFan");
+
+    ScavTrap    scav2(trap);
+
+    ClapTrap    clap("F-Z");
+
+    ScavTrap    scav;
+
+    std::cout << "++++++++++++" << std::endl;
+
+    scav = trap;
+    scav.attack("petit");
+    scav.takeDamage(10);
+    scav.beRepaired(10);
+    scav.guardGate();
+
+    std::cout << "++++++++++++" << std::endl;
+
+    scav2.attack("petit");
+    scav2.takeDamage(10);
+    scav2.beRepaired(10);
+    scav2.guardGate();
+
+    std::cout << "++++++++++++" << std::endl;
+
+    clap.attack("petit");
+    clap.takeDamage(10);
+    clap.beRepaired(10);
+
+    std::cout << "++++++++++++" << std::endl;
+    
+    trap.attack("petit");
+    trap.takeDamage(10);
+    trap.beRepaired(10);
+    trap.guardGate();
+
+    std::cout << "++++++++++++" << std::endl;
 }

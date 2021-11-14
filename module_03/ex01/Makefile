@@ -17,6 +17,9 @@ all: $(NAME)
 $(NAME): $(SRC_OBJ) $(HEADER)
 	$(CC) $(SRC_OBJ) -o $(NAME)
 
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $<
+
 clean:
 	rm -rf $(NAME)
 

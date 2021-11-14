@@ -8,9 +8,11 @@ SRC = ./main.cpp \
 SRC_OBJ = ./main.o \
 	./Fixed.o \
 
+HEADER = ./Fixed.hpp
+
 all: $(NAME)
 
-$(NAME): $(SRC_OBJ)
+$(NAME): $(SRC_OBJ) $(HEADER)
 	$(CC) $(SRC_OBJ) -o $(NAME)
 
 clean:

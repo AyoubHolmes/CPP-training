@@ -2,13 +2,17 @@
 # define BRAIN_H
 
 #include <string>
+#include <iostream>
 
 class Brain
 {
 private:
     std::string ideas[100];
 public:
-    Brain(/* args */);
+    Brain();
+    Brain(Brain &);
+    void            setIdea(std::string, int);
+    std::string     getIdea(int);
     ~Brain();
 };
 

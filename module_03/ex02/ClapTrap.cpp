@@ -1,12 +1,32 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap():hitpoints(10), energy_points(10), attack_damage(0)
 {
-    this->name = name;
-    this->hitpoints = 10;
-    this->energy_points = 10;
-    this->attack_damage = 0;
+    std::cout << "CalpTrap created!" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name):name(name), hitpoints(10), energy_points(10), attack_damage(0)
+{
     std::cout << "CalpTrap " << name << " created!" << std::endl;
+}
+
+
+ClapTrap::ClapTrap(ClapTrap const &c)
+{
+    *this = c;
+    std::cout << "CalpTrap " << name << " created!" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator= (ClapTrap const &c)
+{
+    if (this != &c)
+    {
+        name = c.name;
+        attack_damage = c.attack_damage;
+        hitpoints = c.hitpoints;
+        energy_points = c.energy_points;
+    }
+    return (*this);
 }
 
 void ClapTrap::attack(std::string const & target) {
@@ -18,7 +38,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-    std::cout << "CalpTrap " << name << " is repaired by" << amount << " energy points!" << std::endl;
+    std::cout << "CalpTrap " << name << " is repaired by " << amount << " energy points!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
