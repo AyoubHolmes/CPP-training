@@ -1,28 +1,27 @@
 NAME = a.out
 
-CXX = clang++
-CPPFlAG = -Wall -Wextra -Werror
-
 SRC =	main.cpp\
 		Animal.cpp\
+		WrongAnimal.cpp\
+		WrongCat.cpp\
 		Cat.cpp\
-		Dog.cpp\
-		Brain.cpp\
+		Dog.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADERS = Animal.hpp\
+HEADERS =	Animal.hpp\
+			WrongAnimal.hpp\
 			Dog.hpp\
 			Cat.hpp\
-			Brain.hpp
+			WrongCat.hpp\
 
 all: $(NAME) $(OBJ)
 
 $(NAME): $(OBJ)
-	$(CXX) -Wall -Wextra -Werror -std=c++98 $(OBJ) -o $(NAME)
+	clang++ -Wall -Wextra -Werror -std=c++98 $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEADERS)
-	$(CXX) -Wall -Wextra -Werror -std=c++98 -o $@ -c $<
+	clang++ -Wall -Wextra -Werror -std=c++98 -o $@ -c $<
 
 clean:
 	@rm -f $(OBJ)
