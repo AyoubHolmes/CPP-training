@@ -2,9 +2,11 @@
 #define DOG_HPP
 #include <iostream>
 #include "Animal.hpp"
-
-class Dog:	public	Animal
+#include "Brain.hpp"
+class Dog: public Animal
 {
+	private:
+		Brain *brain;
 	public:
 		Dog();
 		Dog(const Dog &);
@@ -12,5 +14,6 @@ class Dog:	public	Animal
 		Dog & operator = (const Dog &);
 		std::string const getType()const;
 		virtual void  makeSound() const;
+		Brain *getBrain(void);
 };
 #endif
