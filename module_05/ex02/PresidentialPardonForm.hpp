@@ -2,6 +2,7 @@
 #define PRESIDENTIALPARDON_HPP
 
 #include "Form.hpp"
+#include <iostream>
 
 class PresidentialPardonForm : public Form
 {

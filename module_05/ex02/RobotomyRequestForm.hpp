@@ -2,6 +2,7 @@
 #define RobotomyRequestForm_HPP
 
 #include "Form.hpp"
+#include <iostream>
 
 class RobotomyRequestForm : public Form
 {
