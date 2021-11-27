@@ -41,6 +41,7 @@ public:
     };
 
     /* -------------------------------- */
+    virtual void action()const = 0;
     ~Form();
 };
 

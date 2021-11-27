@@ -6,9 +6,13 @@
 class PresidentialPardonForm : public Form
 {
 private:
-    /* data */
+    std::string target;
 public:
     PresidentialPardonForm();
+    PresidentialPardonForm(std::string);
+    PresidentialPardonForm(const PresidentialPardonForm &);
+    PresidentialPardonForm & operator = (const PresidentialPardonForm &);
+    virtual void action()const;
     ~PresidentialPardonForm();
 };
 
