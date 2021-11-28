@@ -29,6 +29,7 @@ int main()
 {
     C c;
     A& rBase = c ;
+    
     std::cout << "rBase is a " << rBase.getName() << '\n';
 
     return 0;
