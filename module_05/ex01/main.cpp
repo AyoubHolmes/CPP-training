@@ -6,15 +6,11 @@
 int main(){
 	try
 	{
-		// Bureaucrat bur("bur", 150);
-		Bureaucrat bur2("bur2", 90);
+		Bureaucrat b_cool_boy("b_cool_boy", 90);
 		Form form("39d l2izdiad", 100, 150);
-		// std::cout << bur << std::endl;
-		std::cout << bur2 << std::endl;
-		// bur.signForm(form);
-		bur2.signForm(form);
-		// form.beSigned(bur);	
-		form.beSigned(bur2);	
+		std::cout << b_cool_boy << std::endl;
+		b_cool_boy.signForm(form);
+		form.beSigned(b_cool_boy);	
 	}
 	catch (std::exception& e)
 	{

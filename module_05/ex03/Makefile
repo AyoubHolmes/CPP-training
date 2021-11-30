@@ -5,14 +5,26 @@ CPPFLAGS = -Wall -Wextra -Werror
 
 SRC = ./main.cpp \
 	./Bureaucrat.cpp \
-	./Form.cpp 
+	./Form.cpp \
+	./PresidentialPardonForm.cpp \
+	./RobotomyRequestForm.cpp \
+	./ShrubberyCreationForm.cpp \
+	./Intern.cpp \
 
 SRC_OBJ = ./main.o \
 	./Bureaucrat.o \
 	./Form.o \
+	./PresidentialPardonForm.o \
+	./RobotomyRequestForm.o \
+	./ShrubberyCreationForm.o \
+	./Intern.o \
 
 HEADER = ./Bureaucrat.hpp \
-		./Form.hpp
+		./Form.hpp \
+		./PresidentialPardonForm.hpp \
+		./RobotomyRequestForm.hpp \
+		./ShrubberyCreationForm.hpp \
+		./Intern.hpp \
 
 all: $(NAME)
 
@@ -23,7 +35,7 @@ $(NAME): $(SRC_OBJ) $(HEADER)
 	$(CXX) $(CPPFLAGS) -c $<
 
 clean:
-	rm -rf $(NAME)
+	rm -rf $(SRC_OBJ)
 
 fclean:
 	rm -rf $(NAME) $(SRC_OBJ)

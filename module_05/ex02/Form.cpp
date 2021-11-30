@@ -62,11 +62,10 @@ const char* Form::GradeTooLowException::what() const throw()
     return ("<--- Form Grade is too Low! --->");
 }
 
-void Form::execute(Bureaucrat const & executor)
+void Form::execute(Bureaucrat const & executor) const
 {
-    if (executor.getGrade() < grade_execute)
+    if (executor.getGrade() > grade_execute)
         throw GradeTooLowException();
-    // std::cout << "< -- " << executor.getName() << " -- > executes " << name << std::endl;
     if (!is_signed)
         std::cout << "Form is not signed yet!" << std::endl;
     else

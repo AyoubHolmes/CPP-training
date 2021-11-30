@@ -1,5 +1,5 @@
-#ifndef EX02_HPP
-# define EX02_HPP
+#ifndef EX00_HPP
+# define EX00_HPP
 
 # include <string>
 # include <exception>
@@ -32,6 +32,7 @@ public:
     void    incrementGrade();
     void    decrementGrade();
     void    signForm(Form &);
+    void    executeForm(Form const & form);
 
     /* -------------------------------- */
 
@@ -47,7 +48,6 @@ public:
 
     /* -------------------------------- */
     
-    void executeForm(Form const & form);
     virtual ~Bureaucrat();
 };
 

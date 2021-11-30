@@ -1,17 +1,40 @@
-#include <iostream>
-#include <exception>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int main(){
+int main()
+{
 	try
 	{
-		Bureaucrat bur2("bur2", 90);
-		std::cout << bur2 << std::endl;
+		std::cout << "_____________________________________________\n";
+		std::cout << "\t\t\e[1;37mFirst Test:\e[0m\n"; 
+		Bureaucrat b("B1", 2);
+		Form *f = new ShrubberyCreationForm("Holmes");
+		f->beSigned(b);
+		b.executeForm(*f);
+		/* 
+		std::cout << "_____________________________________________\n";
+		std::cout << "\t\t\e[1;37mSecond Test:\e[0m\n"; 
+		Bureaucrat b2("B2", 2);
+		Form *f2 = new RobotomyRequestForm("RB1");
+		f2->beSigned(b2);
+		b2.executeForm(*f2);
+		*/
+
+		/*
+		std::cout << "_____________________________________________\n";
+		std::cout << "\t\t\e[1;37mThird Test:\e[0m\n"; 
+		Bureaucrat b3("B3", 2);
+		Form *f3 = new PresidentialPardonForm("PRP1");
+		f3->beSigned(b3);
+		b3.executeForm(*f3);
+		*/
+
 	}
-	catch (std::exception& e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
-	return (0);
+	
 }

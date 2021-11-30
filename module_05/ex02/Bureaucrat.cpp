@@ -65,24 +65,34 @@ void    Bureaucrat::decrementGrade()
 
 void    Bureaucrat::signForm(Form &f)
 {
-    if (grade > f.getSignGrade())
-        std::cout << name << " cannot sign" << f.getName() <<  " because grade is so low" << std::endl;
-    else    
+    try
+    {
+        f.beSigned(*this);
         std::cout << name << " signs " << f.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << name << " cannot sign" << f.getName() <<  " because grade is so low" << std::endl;
+    }
+}
+
+void    Bureaucrat::executeForm(Form const & form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << name << " executes " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << name << " cannot execute" << form.getName() <<  " because grade is so low" << std::endl;
+    }
 }
 
 std::ostream &operator<<(std::ostream& os, Bureaucrat const &B)
 {
     os << B.getName() << ", bureaucrat grade " << B.getGrade() << std::endl;
     return (os);
-}
-
-void Bureaucrat::executeForm(Form const & form)
-{
-    if (grade > form.getExecuteGrade())
-        throw GradeTooLowException();
-    std::cout << "< -- " << name << " -- > executes " << name << std::endl;
-    form.action();
 }
 
 Bureaucrat::~Bureaucrat()

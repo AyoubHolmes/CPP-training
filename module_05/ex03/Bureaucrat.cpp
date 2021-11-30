@@ -77,14 +77,18 @@ std::ostream &operator<<(std::ostream& os, Bureaucrat const &B)
     return (os);
 }
 
-void Bureaucrat::executeForm(Form const & form)
+void    Bureaucrat::executeForm(Form const & form)
 {
-    if (grade > form.getExecuteGrade())
-        throw GradeTooLowException();
-    std::cout << "< -- " << name << " -- > executes " << name << std::endl;
-    form.action();
+    try
+    {
+        form.execute(*this);
+        std::cout << name << " executes " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << name << " cannot execute" << form.getName() <<  " because grade is so low" << std::endl;
+    }
 }
-
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "<< ~ { The Bureaucrat \"" << name <<  "\" is destroyed! } >>" << std::endl;

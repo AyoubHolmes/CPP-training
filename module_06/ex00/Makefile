@@ -1,18 +1,15 @@
-NAME = Form
+NAME = Convert
 
 CXX = clang++ 
 CPPFLAGS = -Wall -Wextra -Werror
 
 SRC = ./main.cpp \
-	./Bureaucrat.cpp \
-	./Form.cpp 
+	./Parse.cpp \
 
 SRC_OBJ = ./main.o \
-	./Bureaucrat.o \
-	./Form.o \
+	./Parse.o \
 
-HEADER = ./Bureaucrat.hpp \
-		./Form.hpp
+HEADER = ./Parse.hpp \
 
 all: $(NAME)
 

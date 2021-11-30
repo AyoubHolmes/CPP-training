@@ -42,7 +42,7 @@ public:
 
     /* -------------------------------- */
     virtual void action()const = 0;
-    void execute(Bureaucrat const & executor);
+    void execute(Bureaucrat const & executor) const;
     ~Form();
 };
 

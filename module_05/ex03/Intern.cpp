@@ -5,13 +5,12 @@
 
 Intern::Intern(){}
 
-Intern::Intern(const Intern &b)
+Intern::Intern(const Intern &bcr)
 {
-	*this = b;
+	*this = bcr;
 }
 
-Intern::~Intern()
-{}
+Intern::~Intern(){}
 
 Intern & Intern::operator = (const Intern &intern)
 {

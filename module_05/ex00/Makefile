@@ -20,7 +20,7 @@ $(NAME): $(SRC_OBJ) $(HEADER)
 	$(CXX) $(CPPFLAGS) -c $<
 
 clean:
-	rm -rf $(NAME)
+	rm -rf $(SRC_OBJ)
 
 fclean:
 	rm -rf $(NAME) $(SRC_OBJ)
