@@ -39,6 +39,6 @@ int main()
     // if (dynamic_cast<Derived1*>(&d1) == nullptr)
     //     cout << "null" << endl;
     int x = 10;
-    float *y = dynamic_cast<float *>(&x);
+    // float *y = dynamic_cast<float *>(&x);
     return 0;
 }
