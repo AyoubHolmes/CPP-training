@@ -30,7 +30,7 @@ public:
     float getF() const;
     double getD() const;
     bool getConverted() const;
-    std::string getParse();
+    std::string getParse() const;
     void setParse(std::string);
     void convert();
     class NotConvertedYetException: public std::exception
