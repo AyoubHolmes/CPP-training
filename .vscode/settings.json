@@ -65,6 +65,10 @@
         "bit": "cpp",
         "clocale": "cpp",
         "deque": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "map": "cpp",
+        "list": "cpp",
+        "__tree": "cpp",
+        "span": "cpp"
     }
 }

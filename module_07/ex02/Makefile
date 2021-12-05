@@ -1,4 +1,4 @@
-NAME = EX00
+NAME = Array
 
 CXX = c++ 
 CPPFLAGS = -Wall -Wextra -Werror
@@ -7,7 +7,7 @@ SRC = ./main.cpp \
 
 SRC_OBJ = ./main.o \
 
-HEADER= whatever.hpp
+HEADER= ./Array.hpp
 
 all: $(NAME)
 
